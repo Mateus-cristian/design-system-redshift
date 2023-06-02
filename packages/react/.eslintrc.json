@@ -1,0 +1,3 @@
+{
+  "extends": "@redshift-ui/eslint-config"
+}
