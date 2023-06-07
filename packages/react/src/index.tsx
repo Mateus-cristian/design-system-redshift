@@ -1,38 +1,4 @@
-import { colors } from '@redshift-ui/tokens'
-import { styled } from './styles'
-import { ComponentProps } from 'react'
-
-
-export const Button = styled('button', {
-    fontFamily: '$default',
-    backgroundColor: '$redshift500',
-    borderRadius: '$sm',
-    border: 0,
-    fontWeight: 'bold',
-    color: "$white",
-
-    variants: {
-        variant: {
-            small: {
-                fontSize: 14,
-                padding: '$2 $4',
-            },
-            big: {
-                fontSize: 16,
-                padding: '$3 $6',
-            }
-        }
-    },
-
-    defaultVariants: {
-        variant: "small"
-    }
-})
-
-export type ButtonProps = ComponentProps<typeof Button>
-
-export function App() {
-    return (
-        <Button>Hello design system</Button>
-    )
-}
+export * from './components/Box'
+export * from './components/Text'
+export * from './components/Heading'
+export * from './components/Avatar'
