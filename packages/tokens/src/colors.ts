@@ -12,7 +12,7 @@ export const colors = {
   gray800: "#202024",
   gray900: "#121214",
 
-  redshift300: "#fe1f0a",
+  redshift300: "#fe1f1a",
   redshift500: "#df1f2f",
   redshift700: "#C21807",
   redshift900: "#b71f00",
