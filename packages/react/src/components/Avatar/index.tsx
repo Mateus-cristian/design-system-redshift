@@ -17,3 +17,6 @@ export function Avatar(props: AvatarProps) {
     )
 }
 
+
+Avatar.defaultName = "Avatar";
+

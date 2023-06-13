@@ -61,7 +61,7 @@ export const Button = styled('button', {
 
             tertiary: {
                 color: '$gray100',
-
+                border: '1px solid $gray100',
                 '&:not(:disabled):hover': {
                     color: '$white',
                 },
@@ -95,3 +95,6 @@ export const Button = styled('button', {
 export interface ButtonProps extends ComponentProps<typeof Button> {
     as?: ElementType
 }
+
+
+Button.displayName = "Button";

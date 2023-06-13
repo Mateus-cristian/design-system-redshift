@@ -15,3 +15,4 @@ export function TextInput({ prefix, ...props }: TextInputProps) {
     )
 }
 
+TextInput.defaultName = "TextInput";
