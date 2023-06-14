@@ -5,11 +5,16 @@ export default {
     title: 'Typography/Heading',
     component: Heading,
     args: {
-        children: (
-            <>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.Dicta sed dignissimos ea eaque expedita harum voluptate magni.Dicta expedita quam beatae maxime eum qui consequatur tempora eius voluptates optio.Tempora!
-            </>
-        )
+        size: 'md',
+        children: 'Custom title'
+    },
+    argTypes: {
+        size: {
+            options: ['sm', 'md', 'lg', '2xl', '3xl', '4xl', '5xl', '6xl'],
+            control: {
+                type: 'inline-radio'
+            }
+        },
     }
 } as Meta<HeadingProps>
 

@@ -1,6 +1,5 @@
 import { ComponentProps, ElementType } from 'react'
 import { styled } from '../styles'
-import { colors } from '@redshift-ui/tokens'
 
 export const Button = styled('button', {
     all: 'unset',
@@ -61,7 +60,7 @@ export const Button = styled('button', {
 
             tertiary: {
                 color: '$gray100',
-                border: '1px solid $gray100',
+
                 '&:not(:disabled):hover': {
                     color: '$white',
                 },
