@@ -1,29 +1,18 @@
 .tokens-grid {
   width: 100%;
-  font-family: sans-seriff;
+  font-family: sans-serif;
   color: #fff;
   border-collapse: collapse;
-  border: 0 !important;
-}
-
-.tokens-grid thead tr {
-  border: 0 !important;
 }
 
 .tokens-grid thead th {
   padding: 0.75rem 1rem;
   text-align: left;
-  border: 0 !important;
-}
-
-.tokens-grid tbody tr {
-  border: 0 !important;
 }
 
 .tokens-grid tbody td {
   padding: 0.75rem 1rem;
   color: #ccc;
-  border: 0 !important;
 }
 
 .tokens-grid tbody td:first-child {
@@ -37,5 +26,5 @@
 }
 
 .tokens-grid tbody tr:nth-child(even) td {
-  background: "#444";
+  background: #444;
 }

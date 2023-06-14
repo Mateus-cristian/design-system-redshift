@@ -5,7 +5,7 @@ interface TokenGridProps {
     hasRemValue?: boolean;
 }
 
-export default function TokensGrid({ tokens, hasRemValue = false }: TokenGridProps) {
+export function TokensGrid({ tokens, hasRemValue = false }: TokenGridProps) {
     return (
         <table className='tokens-grid'>
             <thead>

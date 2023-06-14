@@ -1,3 +1,21 @@
+declare const space: {
+    1: string;
+    2: string;
+    3: string;
+    4: string;
+    5: string;
+    6: string;
+    7: string;
+    8: string;
+    10: string;
+    12: string;
+    16: string;
+    20: string;
+    40: string;
+    64: string;
+    80: string;
+};
+
 declare const colors: {
     white: string;
     black: string;
@@ -9,10 +27,10 @@ declare const colors: {
     gray700: string;
     gray800: string;
     gray900: string;
-    ignite300: string;
-    ignite500: string;
-    ignite700: string;
-    ignite900: string;
+    redshift300: string;
+    redshift500: string;
+    redshift700: string;
+    redshift900: string;
 };
 
 declare const fontSizes: {
@@ -51,22 +69,11 @@ declare const radii: {
     full: string;
 };
 
-declare const space: {
-    1: string;
-    2: string;
-    3: string;
-    4: string;
-    5: string;
-    6: string;
-    7: string;
-    8: string;
-    10: string;
-    12: string;
-    16: string;
-    20: string;
-    40: string;
-    64: string;
-    80: string;
+declare const lineHeights: {
+    shorter: string;
+    short: string;
+    base: string;
+    tall: string;
 };
 
-export { colors, fontSizes, fontWeights, fonts, radii, space };
+export { colors, fontSizes, fontWeights, fonts, lineHeights, radii, space };
