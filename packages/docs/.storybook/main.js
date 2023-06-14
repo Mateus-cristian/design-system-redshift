@@ -16,7 +16,6 @@ module.exports = {
     autodocs: true,
     docsMode: true,
   },
-  framework: "@storybook/react",
   core: {
     builder: "@storybook/builder-vite",
   },
