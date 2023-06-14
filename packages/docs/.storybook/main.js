@@ -1,5 +1,5 @@
 /** @type { import('@storybook/react-vite').StorybookConfig } */
-const config = {
+module.exports = {
   stories: ["../src/pages/**/*.stories.mdx", "../src/stories/**/*.stories.tsx"],
   addons: [
     "@storybook/addon-links",
@@ -16,5 +16,18 @@ const config = {
     autodocs: true,
     docsMode: true,
   },
+  framework: "@storybook/react",
+  core: {
+    builder: "@storybook/builder-vite",
+  },
+  features: {
+    storyStoreV7: true,
+  },
+  viteFinal: (config, { configType }) => {
+    if (configType === "PRODUCTION") {
+      config.base = "/05-design-system/";
+    }
+
+    return config;
+  },
 };
-export default config;
