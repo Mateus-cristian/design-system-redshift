@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/react"
-import { Button, ButtonProps, Text } from '@redshift-ui/react'
+import { Button, ButtonProps, Text } from '@redshiftui/react'
 import { parseToHsl } from "polished"
 import { ArrowRight } from "phosphor-react"
 

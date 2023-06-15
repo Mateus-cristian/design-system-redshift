@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/react"
-import { Box, BoxProps, Text } from '@redshift-ui/react'
+import { Box, BoxProps, Text } from '@redshiftui/react'
 
 export default {
     title: 'Surfaces/Box',

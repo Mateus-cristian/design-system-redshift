@@ -1,6 +1,6 @@
 {
-  "name": "@redshift-ui/react",
-  "version": "1.0.0",
+  "name": "@redshiftui/react",
+  "version": "2.0.0",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -13,9 +13,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@redshift-ui/eslint-config": "*",
-    "@redshift-ui/tokens": "*",
-    "@redshift-ui/ts-config": "*",
+    "@redshiftui/eslint-config": "*",
+    "@redshiftui/tokens": "*",
+    "@redshiftui/ts-config": "*",
     "@types/react-dom": "^18.2.4",
     "react": "^18.2.0",
     "tsup": "^6.7.0",

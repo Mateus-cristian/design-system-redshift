@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/react"
-import { HeadingProps, Heading } from '@redshift-ui/react'
+import { HeadingProps, Heading } from '@redshiftui/react'
 
 export default {
     title: 'Typography/Heading',

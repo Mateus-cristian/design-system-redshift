@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/react"
-import { TextProps, Text } from '@redshift-ui/react'
+import { TextProps, Text } from '@redshiftui/react'
 
 export default {
     title: 'Typography/Text',

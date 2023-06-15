@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/react"
-import { MultiStepProps, MultiStep, Box, Text } from '@redshift-ui/react'
+import { MultiStepProps, MultiStep, Box, Text } from '@redshiftui/react'
 
 export default {
     title: 'Form/MultiStep',

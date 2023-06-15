@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/react"
-import { AvatarProps, Avatar } from '@redshift-ui/react'
+import { AvatarProps, Avatar } from '@redshiftui/react'
 
 export default {
     title: 'Avatar/Avatar',

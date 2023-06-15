@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/react"
-import { TextInputProps, TextInput, Box, Text } from '@redshift-ui/react'
+import { TextInputProps, TextInput, Box, Text } from '@redshiftui/react'
 
 export default {
     title: 'Form/TextInput',

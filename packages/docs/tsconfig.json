@@ -1,4 +1,4 @@
 {
-  "extends": "@redshift-ui/ts-config/react.json",
+  "extends": "@redshiftui/ts-config/react.json",
   "include": ["src"]
 }

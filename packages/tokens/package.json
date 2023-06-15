@@ -1,5 +1,5 @@
 {
-  "name": "@redshift-ui/tokens",
+  "name": "@redshiftui/tokens",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
@@ -14,8 +14,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@redshift-ui/ts-config": "*",
-    "@redshift-ui/eslint-config": "*",
+    "@redshiftui/ts-config": "*",
+    "@redshiftui/eslint-config": "*",
     "tsup": "^6.2.3",
     "typescript": "^5.1.3"
   }

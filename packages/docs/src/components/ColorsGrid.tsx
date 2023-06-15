@@ -1,4 +1,4 @@
-import { colors } from '@redshift-ui/tokens'
+import { colors } from '@redshiftui/tokens'
 import { getContrast } from 'polished'
 
 export function ColorsGrid() {

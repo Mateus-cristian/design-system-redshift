@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/react"
-import { CheckboxProps, Checkbox, Text, Box } from '@redshift-ui/react'
+import { CheckboxProps, Checkbox, Text, Box } from '@redshiftui/react'
 
 export default {
     title: 'Form/Checkbox',

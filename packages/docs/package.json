@@ -1,5 +1,5 @@
 {
-  "name": "@redshift-ui/docs",
+  "name": "@redshiftui/docs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -27,10 +27,10 @@
     "vite": "^3.1.4"
   },
   "dependencies": {
-    "@redshift-ui/eslint-config": "*",
-    "@redshift-ui/react": "*",
-    "@redshift-ui/tokens": "*",
-    "@redshift-ui/ts-config": "*",
+    "@redshiftui/eslint-config": "*",
+    "@redshiftui/react": "*",
+    "@redshiftui/tokens": "*",
+    "@redshiftui/ts-config": "*",
     "@storybook/addon-a11y": "^6.5.12",
     "phosphor-react": "^1.4.1",
     "polished": "^4.2.2",
