@@ -20,7 +20,7 @@ export const CheckboxContainer = styled(Checkbox.Root, {
     backgroundColor: "$redshift300",
   },
 
-  "&:focus": {
+  '&:focus,&[data-state="checked"]': {
     border: "2px solid $redshift300",
   },
 });
