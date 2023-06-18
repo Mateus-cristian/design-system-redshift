@@ -1,5 +1,6 @@
 import {
   colors,
+  fontSizes,
   fontWeights,
   fonts,
   lineHeights,
@@ -26,7 +27,7 @@ export const {
 
   theme: {
     colors: colors,
-    fontSizes: fontWeights,
+    fontSizes: fontSizes,
     fontWeights: fontWeights,
     fonts: fonts,
     lineHeights: lineHeights,

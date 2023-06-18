@@ -64,6 +64,21 @@ var colors = {
   redshift700: "#C21807",
   redshift900: "#b71f00"
 };
+var fontSizes = {
+  xxs: "0.625rem",
+  xs: "0.75rem",
+  sm: "0.875rem",
+  md: "1rem",
+  lg: "1.125rem",
+  xl: "1.25rem",
+  "2xl": "1.5rem",
+  "4xl": "2rem",
+  "5xl": "2.25rem",
+  "6xl": "3rem",
+  "7xl": "4rem",
+  "8xl": "4.5rem",
+  "9xl": "6rem"
+};
 var fontWeights = {
   regular: "400",
   medium: "500",
@@ -106,7 +121,7 @@ var {
   }),
   theme: {
     colors,
-    fontSizes: fontWeights,
+    fontSizes,
     fontWeights,
     fonts,
     lineHeights,
@@ -117,7 +132,7 @@ var {
 
 // src/components/Box.tsx
 var Box = styled("div", {
-  padding: "$4",
+  padding: "$6",
   borderRadius: "$md",
   backgroundColor: "$gray800",
   border: "1px solid $gray600"
@@ -183,8 +198,8 @@ import * as Avatar from "@radix-ui/react-avatar";
 var AvatarContainer = styled2(Avatar.Root, {
   borderRadius: "$full",
   display: "inline-block",
-  width: "$12",
-  height: "$12",
+  width: "$16",
+  height: "$16",
   overflow: "hidden"
 });
 var AvatarImage = styled2(Avatar.Image, {
@@ -247,6 +262,9 @@ var Button = styled("button", {
     backgroundColor: "$gray400",
     cursor: "not-allowed"
   },
+  "&:focus": {
+    boxShadow: "0 0 0 2px $colors$gray100"
+  },
   variants: {
     variant: {
       primary: {
@@ -295,6 +313,9 @@ var Button = styled("button", {
 });
 Button.displayName = "Button";
 
+// src/components/TextInput/index.tsx
+import { forwardRef } from "react";
+
 // src/components/TextInput/styles.ts
 import { styled as styled3 } from "@stitches/react";
 var TextInputContainer = styled3("div", {
@@ -304,13 +325,26 @@ var TextInputContainer = styled3("div", {
   boxSizing: "border-box",
   border: "2px solid $gray900",
   display: "flex",
-  alignItems: "baseline",
+  alignItems: "center",
+  variants: {
+    size: {
+      sm: {
+        padding: "$2 $3"
+      },
+      md: {
+        padding: "$3 $4"
+      }
+    }
+  },
   "&:has(input:focus)": {
     borderColor: "$redshift300"
   },
   "&:has(input:disabled)": {
     opacity: 0.5,
     cursor: "not-allowed"
+  },
+  defaultVariants: {
+    size: "md"
   }
 });
 var Prefix = styled3("span", {
@@ -333,21 +367,23 @@ var Input = styled3("input", {
   "&:disabled": {
     cursor: "not-allowed"
   },
-  "&:placeholder": {
+  "&::placeholder": {
     color: "$gray400"
   }
 });
 
 // src/components/TextInput/index.tsx
 import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
-function TextInput(_a) {
-  var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
-  return /* @__PURE__ */ jsxs2(TextInputContainer, { children: [
-    !!prefix && /* @__PURE__ */ jsx2(Prefix, { children: prefix }),
-    /* @__PURE__ */ jsx2(Input, __spreadValues({}, props))
-  ] });
-}
-TextInput.defaultName = "TextInput";
+var TextInput = forwardRef(
+  (_a, ref) => {
+    var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
+    return /* @__PURE__ */ jsxs2(TextInputContainer, { children: [
+      !!prefix && /* @__PURE__ */ jsx2(Prefix, { children: prefix }),
+      /* @__PURE__ */ jsx2(Input, __spreadValues({ ref }, props))
+    ] });
+  }
+);
+TextInput.displayName = "TextInput";
 
 // src/components/Checkbox/styles.ts
 import * as Checkbox from "@radix-ui/react-checkbox";
@@ -368,7 +404,7 @@ var CheckboxContainer = styled(Checkbox.Root, {
   '&[data-state="checked"]': {
     backgroundColor: "$redshift300"
   },
-  "&:focus": {
+  '&:focus,&[data-state="checked"]': {
     border: "2px solid $redshift300"
   }
 });
@@ -479,6 +515,86 @@ var TextArea = styled4("textarea", {
   }
 });
 TextArea.displayName = "TextArea";
+
+// src/components/Toast/styles.ts
+var ToastContainer = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  backgroundColor: "$gray800",
+  border: "1px solid $gray500",
+  borderRadius: "$md",
+  maxWidth: "500px",
+  padding: "$3 $5",
+  gap: "$4",
+  "& p,span": {
+    margin: "0",
+    padding: "0"
+  },
+  "& span": {
+    fontFamily: "$default",
+    fontWeight: "$regular",
+    cursor: "pointer"
+  }
+});
+var ToastHeader = styled("div", {
+  display: "flex",
+  justifyContent: "space-between",
+  color: "$white",
+  fontSize: "$xl",
+  alignItems: "center",
+  fontFamily: "$code",
+  "& span": {
+    alignSelf: "flex-start"
+  },
+  "& p": {
+    fontWeight: "$bold",
+    wordBreak: "break-all",
+    maxWidth: "90%"
+  }
+});
+var ToastContent = styled("p", {
+  color: "$gray200",
+  fontSize: "$sm",
+  fontFamily: "$default",
+  wordBreak: "break-all"
+});
+
+// src/components/Toast/index.tsx
+import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
+function Toast({ title, onClick, text }) {
+  return /* @__PURE__ */ jsxs4(ToastContainer, { children: [
+    /* @__PURE__ */ jsxs4(ToastHeader, { children: [
+      /* @__PURE__ */ jsx5("p", { children: title }),
+      /* @__PURE__ */ jsx5("span", { onClick, children: "X" })
+    ] }),
+    /* @__PURE__ */ jsx5(ToastContent, { children: /* @__PURE__ */ jsx5("p", { children: text }) })
+  ] });
+}
+Toast.displayName = "Toast";
+
+// src/components/Tooltip.tsx
+var Tooltip = styled("div", {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  background: "$gray900",
+  borderRadius: "$sm",
+  maxWidth: "100%",
+  color: "$gray100",
+  padding: "$3 $4",
+  position: "relative",
+  "&::after": {
+    content: "",
+    position: "absolute",
+    width: "0",
+    height: "0",
+    borderLeft: "10px solid transparent",
+    borderRight: "10px solid transparent",
+    borderTop: "10px solid $gray900",
+    bottom: "-9px"
+  }
+});
+Tooltip.displayName = "Tooltip";
 export {
   Avatar2 as Avatar,
   Box,
@@ -488,5 +604,15 @@ export {
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Toast,
+  Tooltip,
+  config,
+  createTheme,
+  css,
+  getCssText,
+  globalCss,
+  keyframes,
+  styled,
+  theme
 };

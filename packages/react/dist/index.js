@@ -67,7 +67,17 @@ __export(src_exports, {
   MultiStep: () => MultiStep,
   Text: () => Text,
   TextArea: () => TextArea,
-  TextInput: () => TextInput
+  TextInput: () => TextInput,
+  Toast: () => Toast,
+  Tooltip: () => Tooltip,
+  config: () => config,
+  createTheme: () => createTheme,
+  css: () => css,
+  getCssText: () => getCssText,
+  globalCss: () => globalCss,
+  keyframes: () => keyframes,
+  styled: () => styled,
+  theme: () => theme
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -104,6 +114,21 @@ var colors = {
   redshift500: "#df1f2f",
   redshift700: "#C21807",
   redshift900: "#b71f00"
+};
+var fontSizes = {
+  xxs: "0.625rem",
+  xs: "0.75rem",
+  sm: "0.875rem",
+  md: "1rem",
+  lg: "1.125rem",
+  xl: "1.25rem",
+  "2xl": "1.5rem",
+  "4xl": "2rem",
+  "5xl": "2.25rem",
+  "6xl": "3rem",
+  "7xl": "4rem",
+  "8xl": "4.5rem",
+  "9xl": "6rem"
 };
 var fontWeights = {
   regular: "400",
@@ -147,7 +172,7 @@ var {
   }),
   theme: {
     colors,
-    fontSizes: fontWeights,
+    fontSizes,
     fontWeights,
     fonts,
     lineHeights,
@@ -158,7 +183,7 @@ var {
 
 // src/components/Box.tsx
 var Box = styled("div", {
-  padding: "$4",
+  padding: "$6",
   borderRadius: "$md",
   backgroundColor: "$gray800",
   border: "1px solid $gray600"
@@ -224,8 +249,8 @@ var Avatar = __toESM(require("@radix-ui/react-avatar"));
 var AvatarContainer = (0, import_react2.styled)(Avatar.Root, {
   borderRadius: "$full",
   display: "inline-block",
-  width: "$12",
-  height: "$12",
+  width: "$16",
+  height: "$16",
   overflow: "hidden"
 });
 var AvatarImage = (0, import_react2.styled)(Avatar.Image, {
@@ -288,6 +313,9 @@ var Button = styled("button", {
     backgroundColor: "$gray400",
     cursor: "not-allowed"
   },
+  "&:focus": {
+    boxShadow: "0 0 0 2px $colors$gray100"
+  },
   variants: {
     variant: {
       primary: {
@@ -336,6 +364,9 @@ var Button = styled("button", {
 });
 Button.displayName = "Button";
 
+// src/components/TextInput/index.tsx
+var import_react4 = require("react");
+
 // src/components/TextInput/styles.ts
 var import_react3 = require("@stitches/react");
 var TextInputContainer = (0, import_react3.styled)("div", {
@@ -345,13 +376,26 @@ var TextInputContainer = (0, import_react3.styled)("div", {
   boxSizing: "border-box",
   border: "2px solid $gray900",
   display: "flex",
-  alignItems: "baseline",
+  alignItems: "center",
+  variants: {
+    size: {
+      sm: {
+        padding: "$2 $3"
+      },
+      md: {
+        padding: "$3 $4"
+      }
+    }
+  },
   "&:has(input:focus)": {
     borderColor: "$redshift300"
   },
   "&:has(input:disabled)": {
     opacity: 0.5,
     cursor: "not-allowed"
+  },
+  defaultVariants: {
+    size: "md"
   }
 });
 var Prefix = (0, import_react3.styled)("span", {
@@ -374,21 +418,23 @@ var Input = (0, import_react3.styled)("input", {
   "&:disabled": {
     cursor: "not-allowed"
   },
-  "&:placeholder": {
+  "&::placeholder": {
     color: "$gray400"
   }
 });
 
 // src/components/TextInput/index.tsx
 var import_jsx_runtime2 = require("react/jsx-runtime");
-function TextInput(_a) {
-  var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { children: [
-    !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, { children: prefix }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, __spreadValues({}, props))
-  ] });
-}
-TextInput.defaultName = "TextInput";
+var TextInput = (0, import_react4.forwardRef)(
+  (_a, ref) => {
+    var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { children: [
+      !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, { children: prefix }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, __spreadValues({ ref }, props))
+    ] });
+  }
+);
+TextInput.displayName = "TextInput";
 
 // src/components/Checkbox/styles.ts
 var Checkbox = __toESM(require("@radix-ui/react-checkbox"));
@@ -409,7 +455,7 @@ var CheckboxContainer = styled(Checkbox.Root, {
   '&[data-state="checked"]': {
     backgroundColor: "$redshift300"
   },
-  "&:focus": {
+  '&:focus,&[data-state="checked"]': {
     border: "2px solid $redshift300"
   }
 });
@@ -494,8 +540,8 @@ function MultiStep({ size, currentStep = 1 }) {
 MultiStep.defaultName = "Multistep";
 
 // src/components/TextArea.tsx
-var import_react4 = require("@stitches/react");
-var TextArea = (0, import_react4.styled)("textarea", {
+var import_react5 = require("@stitches/react");
+var TextArea = (0, import_react5.styled)("textarea", {
   backgroundColor: "$gray900",
   padding: "$3 $4",
   borderRadius: "$sm",
@@ -520,6 +566,86 @@ var TextArea = (0, import_react4.styled)("textarea", {
   }
 });
 TextArea.displayName = "TextArea";
+
+// src/components/Toast/styles.ts
+var ToastContainer = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  backgroundColor: "$gray800",
+  border: "1px solid $gray500",
+  borderRadius: "$md",
+  maxWidth: "500px",
+  padding: "$3 $5",
+  gap: "$4",
+  "& p,span": {
+    margin: "0",
+    padding: "0"
+  },
+  "& span": {
+    fontFamily: "$default",
+    fontWeight: "$regular",
+    cursor: "pointer"
+  }
+});
+var ToastHeader = styled("div", {
+  display: "flex",
+  justifyContent: "space-between",
+  color: "$white",
+  fontSize: "$xl",
+  alignItems: "center",
+  fontFamily: "$code",
+  "& span": {
+    alignSelf: "flex-start"
+  },
+  "& p": {
+    fontWeight: "$bold",
+    wordBreak: "break-all",
+    maxWidth: "90%"
+  }
+});
+var ToastContent = styled("p", {
+  color: "$gray200",
+  fontSize: "$sm",
+  fontFamily: "$default",
+  wordBreak: "break-all"
+});
+
+// src/components/Toast/index.tsx
+var import_jsx_runtime5 = require("react/jsx-runtime");
+function Toast({ title, onClick, text }) {
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(ToastContainer, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(ToastHeader, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: title }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { onClick, children: "X" })
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(ToastContent, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: text }) })
+  ] });
+}
+Toast.displayName = "Toast";
+
+// src/components/Tooltip.tsx
+var Tooltip = styled("div", {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  background: "$gray900",
+  borderRadius: "$sm",
+  maxWidth: "100%",
+  color: "$gray100",
+  padding: "$3 $4",
+  position: "relative",
+  "&::after": {
+    content: "",
+    position: "absolute",
+    width: "0",
+    height: "0",
+    borderLeft: "10px solid transparent",
+    borderRight: "10px solid transparent",
+    borderTop: "10px solid $gray900",
+    bottom: "-9px"
+  }
+});
+Tooltip.displayName = "Tooltip";
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -530,5 +656,15 @@ TextArea.displayName = "TextArea";
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Toast,
+  Tooltip,
+  config,
+  createTheme,
+  css,
+  getCssText,
+  globalCss,
+  keyframes,
+  styled,
+  theme
 });
