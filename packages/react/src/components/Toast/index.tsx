@@ -1,4 +1,4 @@
-import { ComponentProps } from "@stitches/react";
+import { ComponentProps } from "react";
 import { ToastContainer, ToastContent, ToastHeader } from "./styles";
 import { ElementType } from "react";
 
