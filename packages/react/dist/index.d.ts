@@ -2,7 +2,6 @@ import * as _stitches_react_types_styled_component from '@stitches/react/types/s
 import * as _stitches_react_types_css_util from '@stitches/react/types/css-util';
 import * as react from 'react';
 import { ComponentProps, ElementType } from 'react';
-import { ComponentProps as ComponentProps$1 } from '@stitches/react';
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import * as Avatar$1 from '@radix-ui/react-avatar';
 import * as Checkbox$1 from '@radix-ui/react-checkbox';
@@ -29,9 +28,19 @@ declare const Box: _stitches_react_types_styled_component.StyledComponent<"div",
         redshift900: string;
     };
     fontSizes: {
-        regular: string;
-        medium: string;
-        bold: string;
+        xxs: string;
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        '2xl': string;
+        '4xl': string;
+        '5xl': string;
+        '6xl': string;
+        '7xl': string;
+        '8xl': string;
+        '9xl': string;
     };
     fontWeights: {
         regular: string;
@@ -208,7 +217,7 @@ interface BoxProps extends ComponentProps<typeof Box> {
 }
 
 declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", {
-    size?: "xs" | "sm" | "md" | "lg" | "xxs" | "xl" | "2xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl" | undefined;
+    size?: "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl" | undefined;
 }, {}, _stitches_react_types_css_util.CSS<{}, {
     colors: {
         white: string;
@@ -227,9 +236,19 @@ declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", 
         redshift900: string;
     };
     fontSizes: {
-        regular: string;
-        medium: string;
-        bold: string;
+        xxs: string;
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        '2xl': string;
+        '4xl': string;
+        '5xl': string;
+        '6xl': string;
+        '7xl': string;
+        '8xl': string;
+        '9xl': string;
     };
     fontWeights: {
         regular: string;
@@ -401,7 +420,7 @@ declare const Text: _stitches_react_types_styled_component.StyledComponent<"p", 
     transition: "transitions";
     zIndex: "zIndices";
 }, {}>>;
-interface TextProps extends ComponentProps$1<typeof Text> {
+interface TextProps extends ComponentProps<typeof Text> {
     as?: ElementType;
 }
 
@@ -425,9 +444,19 @@ declare const Heading: _stitches_react_types_styled_component.StyledComponent<"h
         redshift900: string;
     };
     fontSizes: {
-        regular: string;
-        medium: string;
-        bold: string;
+        xxs: string;
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        '2xl': string;
+        '4xl': string;
+        '5xl': string;
+        '6xl': string;
+        '7xl': string;
+        '8xl': string;
+        '9xl': string;
     };
     fontWeights: {
         regular: string;
@@ -599,7 +628,7 @@ declare const Heading: _stitches_react_types_styled_component.StyledComponent<"h
     transition: "transitions";
     zIndex: "zIndices";
 }, {}>>;
-interface HeadingProps extends ComponentProps$1<typeof Heading> {
+interface HeadingProps extends ComponentProps<typeof Heading> {
     as?: ElementType;
 }
 
@@ -633,9 +662,19 @@ declare const Button: _stitches_react_types_styled_component.StyledComponent<"bu
         redshift900: string;
     };
     fontSizes: {
-        regular: string;
-        medium: string;
-        bold: string;
+        xxs: string;
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        '2xl': string;
+        '4xl': string;
+        '5xl': string;
+        '6xl': string;
+        '7xl': string;
+        '8xl': string;
+        '9xl': string;
     };
     fontWeights: {
         regular: string;
@@ -811,10 +850,14 @@ interface ButtonProps extends ComponentProps<typeof Button> {
     as?: ElementType;
 }
 
+declare const TextInputContainer: _stitches_react_types_styled_component.StyledComponent<"div", {
+    size?: "sm" | "md" | undefined;
+}, {}, _stitches_react_types_css_util.CSS<{}, {}, {}, {}>>;
 declare const Input: _stitches_react_types_styled_component.StyledComponent<"input", {}, {}, _stitches_react_types_css_util.CSS<{}, {}, {}, {}>>;
 
-interface TextInputProps extends ComponentProps$1<typeof Input> {
+interface TextInputProps extends Omit<ComponentProps<typeof Input>, 'size'> {
     prefix?: string;
+    size?: ComponentProps<typeof TextInputContainer>['size'];
 }
 declare const TextInput: react.ForwardRefExoticComponent<Omit<TextInputProps, "ref"> & react.RefAttributes<HTMLInputElement>>;
 
@@ -836,9 +879,19 @@ declare const CheckboxContainer: _stitches_react_types_styled_component.StyledCo
         redshift900: string;
     };
     fontSizes: {
-        regular: string;
-        medium: string;
-        bold: string;
+        xxs: string;
+        xs: string;
+        sm: string;
+        md: string;
+        lg: string;
+        xl: string;
+        '2xl': string;
+        '4xl': string;
+        '5xl': string;
+        '6xl': string;
+        '7xl': string;
+        '8xl': string;
+        '9xl': string;
     };
     fontWeights: {
         regular: string;
@@ -1037,7 +1090,7 @@ declare function Toast({ title, onClick, text }: Props): react_jsx_runtime.JSX.E
 declare namespace Toast {
     var displayName: string;
 }
-interface ToastProps extends ComponentProps$1<typeof Toast> {
+interface ToastProps extends ComponentProps<typeof Toast> {
     as?: ElementType;
 }
 
@@ -1252,7 +1305,6 @@ declare const styled: <Type extends _stitches_react_types_util.Function | keyof 
     colors: {
         white: string;
         black: string;
-        red: string;
         gray100: string;
         gray200: string;
         gray400: string;
@@ -1465,7 +1517,6 @@ declare const styled: <Type extends _stitches_react_types_util.Function | keyof 
     colors: {
         white: string;
         black: string;
-        red: string;
         gray100: string;
         gray200: string;
         gray400: string;
@@ -1670,7 +1721,6 @@ declare const css: <Composers extends (string | _stitches_react_types_util.Funct
     colors: {
         white: string;
         black: string;
-        red: string;
         gray100: string;
         gray200: string;
         gray400: string;
@@ -1890,7 +1940,6 @@ declare const globalCss: <Styles extends {
         colors: {
             white: string;
             black: string;
-            red: string;
             gray100: string;
             gray200: string;
             gray400: string;
@@ -2093,7 +2142,6 @@ declare const globalCss: <Styles extends {
     colors: {
         white: string;
         black: string;
-        red: string;
         gray100: string;
         gray200: string;
         gray400: string;
@@ -2297,7 +2345,6 @@ declare const keyframes: (style: {
         colors: {
             white: string;
             black: string;
-            red: string;
             gray100: string;
             gray200: string;
             gray400: string;
@@ -2508,7 +2555,6 @@ declare const theme: string & {
     colors: {
         white: _stitches_react_types_theme.Token<"white", string, "colors", "">;
         black: _stitches_react_types_theme.Token<"black", string, "colors", "">;
-        red: _stitches_react_types_theme.Token<"red", string, "colors", "">;
         gray100: _stitches_react_types_theme.Token<"gray100", string, "colors", "">;
         gray200: _stitches_react_types_theme.Token<"gray200", string, "colors", "">;
         gray400: _stitches_react_types_theme.Token<"gray400", string, "colors", "">;
@@ -2582,7 +2628,6 @@ declare const createTheme: <Argument0 extends string | ({
     colors?: {
         white?: string | number | boolean | undefined;
         black?: string | number | boolean | undefined;
-        red?: string | number | boolean | undefined;
         gray100?: string | number | boolean | undefined;
         gray200?: string | number | boolean | undefined;
         gray400?: string | number | boolean | undefined;
@@ -2660,7 +2705,6 @@ declare const createTheme: <Argument0 extends string | ({
     colors?: {
         white?: string | number | boolean | undefined;
         black?: string | number | boolean | undefined;
-        red?: string | number | boolean | undefined;
         gray100?: string | number | boolean | undefined;
         gray200?: string | number | boolean | undefined;
         gray400?: string | number | boolean | undefined;
@@ -2745,7 +2789,6 @@ declare const config: {
         colors: {
             white: string;
             black: string;
-            red: string;
             gray100: string;
             gray200: string;
             gray400: string;

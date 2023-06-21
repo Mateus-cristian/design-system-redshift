@@ -427,8 +427,8 @@ var Input = (0, import_react3.styled)("input", {
 var import_jsx_runtime2 = require("react/jsx-runtime");
 var TextInput = (0, import_react4.forwardRef)(
   (_a, ref) => {
-    var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
-    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { children: [
+    var _b = _a, { prefix, size } = _b, props = __objRest(_b, ["prefix", "size"]);
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { size, children: [
       !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, { children: prefix }),
       /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, __spreadValues({ ref }, props))
     ] });
