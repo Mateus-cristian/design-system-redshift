@@ -195,7 +195,7 @@ var Text = styled("p", {
   fontFamily: "$default",
   lineHeight: "$base",
   margin: 8,
-  color: "$gray500",
+  color: "$gray100",
   variants: {
     size: {
       xxs: { fontSize: "$xxs" },
@@ -224,7 +224,7 @@ var Heading = styled("h2", {
   fontFamily: "$default",
   lineHeight: "$shorter",
   margin: 8,
-  color: "$gray500",
+  color: "$gray100",
   variants: {
     size: {
       sm: { fontSize: "$xl" },

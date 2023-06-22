@@ -1,5 +1,11 @@
 # @redshiftui/react
 
+## 3.1.0
+
+### Minor Changes
+
+- 2fc6eed: change colors components
+
 ## 3.0.0
 
 ### Major Changes
