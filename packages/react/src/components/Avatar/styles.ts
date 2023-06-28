@@ -28,7 +28,5 @@ export const AvatarFallback = styled(Avatar.Fallback, {
   svg: {
     width: "$6",
     height: "$6",
-    minHeight: "$12",
-    minWidth: "$12",
   },
 });
