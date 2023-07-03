@@ -1,0 +1,2 @@
+import{A as t}from"./index.b334f8b4.js";import"./index.2c8adac4.js";import"./iframe.aa0e8ad3.js";import"./index.e125bbea.js";import"./jsx-runtime.d43dcf22.js";const c={title:"Avatar/Avatar",component:t,args:{src:"https://avatars.githubusercontent.com/u/77680225?v=4",alt:"Mateus Cristian"}},m={},e={args:{src:void 0}},n=["Primary","WithFallback"];export{m as Primary,e as WithFallback,n as __namedExportsOrder,c as default};
+//# sourceMappingURL=Avatar.stories.64408d39.js.map
