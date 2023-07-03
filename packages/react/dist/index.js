@@ -269,9 +269,7 @@ var AvatarFallback = (0, import_react2.styled)(Avatar.Fallback, {
   color: "$gray800",
   svg: {
     width: "$6",
-    height: "$6",
-    minHeight: "$12",
-    minWidth: "$12"
+    height: "$6"
   }
 });
 

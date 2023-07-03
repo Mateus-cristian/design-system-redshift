@@ -218,9 +218,7 @@ var AvatarFallback = styled2(Avatar.Fallback, {
   color: "$gray800",
   svg: {
     width: "$6",
-    height: "$6",
-    minHeight: "$12",
-    minWidth: "$12"
+    height: "$6"
   }
 });
 

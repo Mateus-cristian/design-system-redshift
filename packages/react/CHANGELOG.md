@@ -1,5 +1,17 @@
 # @redshiftui/react
 
+## 5.0.0
+
+### Major Changes
+
+- fix height and width avatar
+
+## 4.0.0
+
+### Major Changes
+
+- fix width and height avatar
+
 ## 3.1.0
 
 ### Minor Changes
