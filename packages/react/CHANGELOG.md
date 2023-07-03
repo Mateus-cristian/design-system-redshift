@@ -1,5 +1,11 @@
 # @redshiftui/react
 
+## 6.0.0
+
+### Major Changes
+
+- bb122d4: test
+
 ## 5.0.0
 
 ### Major Changes
