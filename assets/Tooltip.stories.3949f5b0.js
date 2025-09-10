@@ -1,0 +1,2 @@
+import{e as o}from"./index.b334f8b4.js";import"./index.2c8adac4.js";import"./iframe.aa0e8ad3.js";import"./index.e125bbea.js";import"./jsx-runtime.d43dcf22.js";const n={title:"Alert/Tooltip",component:o,args:{children:"20 de junho - dispon\xEDvel"},argTypes:{children:{}}},s={args:{children:"20 de junho - dispon\xEDvel"}},l=["Primary"];export{s as Primary,l as __namedExportsOrder,n as default};
+//# sourceMappingURL=Tooltip.stories.3949f5b0.js.map
