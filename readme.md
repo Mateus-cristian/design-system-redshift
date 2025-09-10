@@ -58,4 +58,4 @@ MIT
 
 ---
 
-Feito com ❤️ por [Mateus Cristian Ferreira de Paula](https://github.com/seu-usuario)
+Feito com ❤️ por Mateus Cristian Ferreira de Paula
